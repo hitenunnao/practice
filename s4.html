@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jslecture</title>
+</head>
+<body> 
+    <div id="one"></div>  
+</body>
+</html>
+<script type="text/javascript">
+    var x=new Array(4,5,6,7)   //array declaration type a
+    document.writeln(x[2])
+    var y=[]      //array declaration type b
+    y[0]=1;y[1]=2;
+    y.push(3,4,5,6,7,8) //push function
+    document.writeln(y)
+    console.log(y)
+    y.pop() //pop function
+    document.writeln("<br>"+y)
+    for( let z in x)                //for with in used to show or represent the index of the array
+    {
+        document.writeln("<br><br>"+z)
+    }
+    for(let a of x)                 //for with of used to show the elements of an array
+    {
+        document.writeln("<br>"+a)
+    }
+    //string
+
+var str=new String("hello*world")       //string can contain any special symbols as well as space, string always be defined in between double inverted commas
+document.writeln(str[5])
+
+//date
+var tarikh=new Date()
+// tarikh.getHours
+document.writeln(tarikh)
+
+
+</script>
