@@ -18,19 +18,21 @@
     </style>
 </head>
 <body>
-    <header>method to swap two numbers</header>
-    <p>before swapping tthe valuues of x and y are respectively<br><label id="m1"></label><br><br><label id="m2"></label> </p>
     
+<h1 id="m1" ></h1>
+<h1 id="m2" ></h1>
+<div id="one"></div>
 </body>
 </html>
 <script type="text/javascript">
+    document.getElementById("one").innerHTML="<header>this is the program to swap two numbers</header>"
     var x,y,z
     x=parseInt(prompt("enter first number")); y=parseInt(prompt("enter second number"));
-
     document.getElementById("m1").innerHTML=x
-    document.getElementById("m2").innerHTML="<h4>hello</h4>"
+    document.getElementById("m2").innerHTML=y
     z=x;x=y;y=z
     document.write("after swappiing value of x anf y respectively are:")
     document.write("<br><br>"+x+"<br><br>"+y)
     console.log(x)
+
 </script>
