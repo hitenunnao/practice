@@ -6,7 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+   <button onclick="abc()">click</button><br><br>
+   <form method="get" >
+    <label>name</label><input type="text" id="one"><br>
+    <label>email</label><input type="email"><br>
+</form>
+<input type="button" value="enter" onclick="submit()"><br>          //onclick is a event
 </body>
 </html>
 <script type="text/javascript">
@@ -17,16 +22,48 @@
 // { document.write("zero")}
 // else(x<0)
 // { document.write("negative")}
-function getinput(m,n)
-{let a,b,c;
-    a=m;b=n;
-    c=a+b;
-    document.writeln(c)
-    return
+// function getinput(m,n)
+// {let a,b,c;
+//     a=m;b=n;
+//     c=a+b;
+//     document.writeln(c)
+//     return
+// }
+// getinput(5.6,2.3);document.writeln("<br><br>")
+// x=getinput(2,3)
+// // function abc()
+// {
+//     var x=[]
+//     x[0]=1;
+//     x[1]=2
+//     x[2]=3
+//     x.push(7,89)
+//     x.unshift(69)
+//     console.log(x)
+
+    // 
+// }
+// var y=["hello",7]
+//     document.writeln(y)
+
+//     let mongodb={rollno:2,sname:"rohit"}
+//     let key = "rollno"
+//     mongodb["add"]=97    
+// delete mongodb.rollno
+// console.log(mongodb["rollno"])
+
+    // window.alert("wow")
+    // window.location = 'https://th.bing.com/th/id/OIP.Y0EOGKPs0pPvy-U9As4ySgHaJ4?rs=1&pid=ImgDetMain'
+    // console.log("opened")
+
+//form dom elements
+
+function submit()
+{
+console.log(document.forms[0].elements[0].value)
+document.getElementById("one").value
+console.log(document.getElementById("one").value
+)
 }
-getinput(5.6,2.3);document.writeln("<br><br>")
-x=getinput(2,3)
-
-
-
+submit()
 </script>
