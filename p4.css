@@ -1,0 +1,40 @@
+.charging-section{
+
+    position: absolute;
+    bottom: 0;
+    height: 0%;
+    width: 100%;
+    animation: raiseup 5s forwards ease-in;
+}
+
+.fa-bolt{
+    color: white;
+    font-size: 2rem;
+    z-index: 5;
+    animation: infinite pulse 1s ease-in-out;
+}
+
+@keyframes raiseup{
+    0%{
+        height: 0%;
+        background: red;
+    }
+    50%{
+        background: yellow;
+    }
+    100%{
+        background: green;
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(1); 
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
