@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals</title>
+</head>
+<body>
+    <div id="container"><h3>hello</h3></div>
+    <input type="text" id="one">
+    <input type="button" onclick="getvalue()" value="oneclick"><br><br>
+    <input text="text" >
+    <input type="text" id="fifty" oninput="single()">
+</body>
+</html>
+<script>
+    
+function getvalue()
+{
+let variable="html"
+    let nude=document.getElementById("one").value
+let x=document.getElementsByClassName("container")
+console.log(x[0].innerHTML=x[0].innerHTML+`<h3>${nude}</h3>`)                     //"`" are called string literals it is used in dynamically asigned value
+}
+
+// much more important
+
+function supposeonchange(){
+    let como="html"
+    let nsfw=document.getElementById("two").value
+//    var y=document.getElementsByClassName("container")
+console.log(y[0].innerHTML=`<h3>${nsfw}</h3>`)                     //"`" are called string literals it is used in dynamically asigned value
+}
+function single(){
+    let mono="hamburger"
+    let porno=document.getElementById("fifty").value
+    var y=document.getElementById("container")
+    console.log(y.innerHTML=`<h4>${porno}</h4>`)
+}
+</script>
