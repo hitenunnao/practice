@@ -28,11 +28,3 @@ else:
 a=[4,5,6]           #impementing for loop
 for i in a:
     print(i)
-
-tup=['mango','apple','kiwi','banana'] 
-for i in tup:
-    print(i)
-
-
-
-  
