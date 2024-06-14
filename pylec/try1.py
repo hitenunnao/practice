@@ -1,21 +1,25 @@
-ans="yes"
-while(ans=='yes'):
-    a=int(input("enter: "))
-    b=a
-    c=0
-    while(a>0):
-        d=a%10
-        c=c*10+d
-        a=a//10
-        
-    if(b==c):
-        print("Palindrome")
-    else:
-        print("Not Palindrome")
-    ans=input("would you continue: ")
+def nested1():
+    rows=int(input("enter rows: "))
+    column=int(input("enter columns: "))
+    symbol=input("enter symbol: ")
+    for i in range(rows):
+        for x in range(column):
+            print(symbol,end=" ")
+        print()
+nested1()
 
-string=input("enter a letter")
-if(string==string[::-1]):
-     print("Palindrome")
-else:
-     print("Not Palindrome")
+def nested2():
+    symbol=input("enter symbol: ")
+    for i in range(1,5):
+        for x in range(0,i):
+            print(x,end=" ")
+        print()
+nested2()
+
+def nested3():
+    symbol=input("enter symbol: ")
+    for i in reversed(range(1,5)):
+        for x in range(0,i):
+            print(symbol,end=" ")
+        print()
+nested3()

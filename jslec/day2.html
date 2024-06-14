@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real time typed  value</title>
+
+    <!-- oninput attribute ["script to be run when the element gets the user input"]  -->
+    <style>
+        .oninput{
+            background-color: aqua;
+            align-items: center;
+        }
+        #id{
+            align-items: center;
+            justify-content: center;
+        
+        }
+    </style>
+
+</head>
+<body>
+    <div class="oninput">
+            <input type="text" oninput="runtime()" id="demo">
+            <p id="para"></p>
+    </div>
+</body>
+</html>
+<script>
+function runtime(){
+   let x=document.getElementById("demo").value;
+   document.getElementById("para").innerHTML=x
+}
+</script>
