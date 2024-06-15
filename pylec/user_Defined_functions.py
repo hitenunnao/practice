@@ -96,3 +96,80 @@ def palindrome(x):
         print("NOT PALINDROME")
 x=int(input("enter to check the number is Palindrome"))
 palindrome(x)
+
+
+# function to find maximum element in the list
+def find_Max():
+    l=[]
+    n=int(input("enter the number of elements you want to enter: "))
+    i=0
+    while(i<n):
+        element=int(input("enter the element: "))
+        l.append(element)
+        i+=1
+    item=0
+    max_element=l[0]
+    for item in l:
+        if item > max_element:
+            max_element = item
+    return max_element
+print(find_Max())   
+
+
+# function to find minimum element in the list
+def find_Min():
+    l=[]
+    n=int(input("enter the number of elements you want to enter: "))
+    i=0
+    while(i<n):
+        element=int(input("enter the element: "))
+        l.append(element)
+        i+=1
+    item=0
+    min_element=l[0]
+    for item in l:
+        if item < min_element:
+            min_element = item
+    return min_element
+print(find_Min())   
+
+
+# function to  take input in a list
+def list():
+    l=[]
+    n=int(input("enter the number of elements you want to enter: "))
+    i=0
+    while(i<n):
+        element=int(input("enter the element: "))
+        l.append(element)
+        i+=1
+    return l
+print(list())
+
+
+# function to print number of occurence 
+def occurence(x):
+    x=int(input("enter the number: "))
+    count=0
+    check=list()
+    for i in check:
+        if i == x:
+            count+=1
+    return count
+print(occurence())
+
+
+# function to delete the duplicates
+def duplicate():
+    check=list()
+    x=int(input("enter the duplicate element to delete: "))
+    for item in check:
+        if item == x:
+            check.pop(item)
+    return check
+duplicate()
+
+
+    
+
+
