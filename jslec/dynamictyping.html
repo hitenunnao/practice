@@ -11,6 +11,7 @@
     <!-- <input type="button" onclick="getvalue()" value="oneclick"><br><br> -->
     <!-- <input text="text" > -->
     <input type="text" id="fifty" oninput="single()">
+    <p class="hello"></p>
 </body>
 </html>
 <script>
@@ -35,5 +36,7 @@ function single(){
     let porno=document.getElementById("fifty").value
     var y=document.getElementById("container")
     console.log(y.innerHTML=`<h4>${porno}</h4>`)
+
+
 }
 </script>

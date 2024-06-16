@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hello">you will get text here</p>
+    <button id="byebye" onclick="getinput()">click me</button>
+    <input type="text" id="bye">
+</body>
+</html>
+<script>
+    function getinput(){
+        var x=document.getElementById("bye").value;
+        document.getElementById("hello").innerText=x
+    }
+</script>
