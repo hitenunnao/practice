@@ -62,4 +62,27 @@
     console.log(x)
 
 
+    var l=[23,45,78,98,554,76]
+    function doom(item){
+        return item < 78
+    }
+    function indexing(b){
+        return b === 45
+    }
+    let res1=l.findLast(doom)
+    let res2=l.find(doom)
+    console.log(res1,res2)
+    let res3=l.findIndex(indexing)
+    let res4=l.findLastIndex(indexing)
+    console.log(res3)
+    console.log(res4)
+    res5=l.indexOf(indexing)
+    // res6=lastIndexOf(indexing)
+    console.log(res5)
+    // console.log(res6)
+
+
+    
+
+
 </script>
