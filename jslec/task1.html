@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-1</title>
+</head>
+<body>
+    <input type="text" class="one"><br>
+    <button onclick="takeinput()">click</button><br>
+    <div id="two"></div>
+</body>
+</html>
+<script>
+    function takeinput(){
+        var sum=0
+        var x=document.getElementsByClassName("one")[0].value;
+        var l=x.split(",")
+        console.log(l,typeof(l))
+
+        var evensum=(item)=>{ return item%2==0}
+        var newvalue=l.filter(evensum)
+        
+        var x=newvalue      
+        for(let i=0;i<x.length;i++){
+            sum+=parseInt(x[i])
+        }
+        document.getElementById("two").innerHTML="result:="+ sum
+    }   
+    takeinput()
+</script>

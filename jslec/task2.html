@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-1</title>
+</head>
+<body>
+    <input type="text" id="two"><br>
+    <button onclick="takeinput()">click</button><br>
+    <div id="one"></div>
+</body>
+</html>
+<script>
+    function takeinput(){
+        var sum=0
+        var i
+        var x=document.getElementById("two").value;
+        var arr=x.split(",")
+        
+        var calc=(i)=> {return i%2==0;}
+        var l=arr.filter(calc)
+
+        for(let n=0;n< l.length; n++){
+            sum=sum+parseInt([n])
+        }
+        console.log(arr)
+        console.log(l)
+
+        var avg=sum/arr.length
+        document.getElementById("one").innerHTML="result="+ avg
+    }   
+</script>

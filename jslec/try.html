@@ -6,14 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="hello">you will get text here</p>
-    <button id="byebye" onclick="getinput()">click me</button>
-    <input type="text" id="bye">
+   
 </body>
 </html>
 <script>
-    function getinput(){
-        var x=document.getElementById("bye").value;
-        document.getElementById("hello").innerText=x
-    }
+    let l=[{name:"Ayush" , age:34} , {name:'Ayush' , age:45}]
+    let filtersName = l.filter(el => el.name == "Ayush" && el.age == 34) 
+    console.log(filtersName)
+    let findName = l.find(el => el.name == 'Ayush')
+    console.log(findName)
+    
+    
+
 </script>

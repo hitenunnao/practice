@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="i1"></div><div id="i2"></div>
+</body>
+</html>
+<script>
+    // first api calling to print all data using async and await 
+    async function normal(){
+        let var1 = await fetch('https://freetestapi.com/api/v1/airlines')
+        let var2 = await var1.json()
+        console.log(var2)
+    }
+    normal()
+
+    async function normal1(){
+        
+        let var3 = await fetch('https://freetestapi.com/api/v1/airlines')
+        let var4 = await var3.json()
+        function boom(item1){
+           let x=`<h1>${item1.name}</h1>`
+            return x
+        }
+        let var5 = var4.map(boom)
+        document.getElementById("i1").innerHTML= var5
+
+        let var6 = (item2) => { return `<h4>${item2.id}</h4>`}
+        let var7 = var4.map(var6)
+        document.getElementById("i2").innerHTML= var7 
+    }
+    normal1()
+
+</script>
