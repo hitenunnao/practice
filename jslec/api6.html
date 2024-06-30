@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    async function boom(){
+    let var1 = await fetch("http://www.omdbapi.com/?i=tt3896198&apikey=856aa55b")
+    let var2 = await var1.json()
+    console.log(var2)}
+    boom()
+
+</script>
