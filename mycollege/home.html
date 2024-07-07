@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="a">
+        <div class="a1">
+            <img src="C:\Users\rishi\Downloads\WhatsApp Image 2024-06-24 at 11.28.37 AM.jpeg" alt="" style="height: 150px;width: 400px;">
+        </div>
+        <div class="a2">
+            <h1>DR. VIRENDRA SWARUP GROUP OF INSTITUTIONS</h1>
+            <h4>APPROVED BY AICTE, AFFILIATED TO AKTU / CSJMU / BTE / NCVT / SCVT</h4>
+        </div>
+    </div>
+    <div class="b">
+        <nav class="navbar">
+            <li class="navbar-list"><a href="">HOME</a></li>
+            <li class="navbar-list"><a href="">COURSES</a></li>
+            <li class="navbar-list"><a href="">FACULTY</a></li>
+            <li class="navbar-list"><a href="">PRINCIPAL</a></li>
+            <div class="searchbar">
+                <input type="text" name="searchbar" placeholder="search in website" id="one" oninput="f1()">
+            </div>
+        </nav>
+    </div>
+    <div class="c">
+        <div class="c1">
+            <h3>Raghendra Swarup Knowledge City</h3>
+            <p class="para1">Dr. Virendra Swarup Memorial Trust Group of Institutions (VSGOI)- is situated at 'Raghendra Swarup Knowledge City'(RSKC)- a world class educational complex spread over 50 acres of lush green and beautifully landscape surroundings. Visualised as a world class center of learning by the Joint Secretary, Board of Mnagement, <strong> Dr. Alakshendra Swarup</strong>, who has been a part of various renowned institutions in India and abroad, namely  London School of Economics, U.K., Lancaster University, UK & St.Stephens College, Delhi the knowledge City is a self contained township equipped with-in-house facilities to cater educational and other needs of students. </p>
+        </div>
+        <div class="c2">
+            <div class="c2a">
+                 <h2>VISION</h2>
+                 <p>
+                        To be a truly world class institution of academic excellence with total commitment and dedication to quality education, research, consultancy services, training, ethics and human valuea with a holistic concern for society and environment.
+                </p>
+            </div>
+            <div class="c2b">
+                 <h2>MISSION</h2>
+                    <p>
+                            To nurture, develop and produce globally competent technocrats and business leaders with a strong desire to excel as professionals and improve quality of human life, society and environment.
+                    </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let l = [{title:"first", description:"To be a truly world class institution of academic excellence with total commitment and dedication to quality education, research, consultancy services, training, ethics and human valuea with a holistic concern for society and environment."},{title:"second", description:"To be a truly world class institution of academic excellence with total commitment and dedication to quality education, research, consultancy services, training, ethics and human valuea with a holistic concern for society and environment."},{title:"third", description:"To be a truly world class institution of academic excellence with total commitment and dedication to quality education, research, consultancy services, training, ethics and human valuea with a holistic concern for society and environment."},{title:"four", description:"To be a truly world class institution of academic excellence with total commitment and dedication to quality education, research, consultancy services, training, ethics and human valuea with a holistic concern for society and environment."},{title:"fifth", description:"To be a truly world class institution of academic excellence with total commitment and dedication to quality education, research, consultancy services, training, ethics and human valuea with a holistic concern for society and environment."},{title:"sixth", description:"To be a truly world class institution of academic excellence with total commitment and dedication to quality education, research, consultancy services, training, ethics and human valuea with a holistic concern for society and environment."}]
+    let var1 = ""
+    l.forEach(item => {var1 += `<div class="c2a">
+                 <h2>${item.title}</h2>
+                 <p>
+                 ${item.description}
+                </p>
+            </div>`})
+    document.getElementsByClassName("c2")[0].innerHTML = var1
+    function f1(){
+        let var2 = document.getElementById("one").value 
+        console.log(var2)
+    }
+</script>

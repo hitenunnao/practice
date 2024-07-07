@@ -1,0 +1,112 @@
+.a{
+    height: 200px;
+    width: 100%;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgb(250, 199, 123);
+}
+.a img{
+    margin: 20px;
+    border: 2px solid black;
+}
+.a h1{
+    /* border: 2px solid black; */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2px 5px 2px 5px;
+    width: 800px;
+    margin-top: 50px;
+    color: azure;
+}
+.a h4{
+    /* border: 2px solid black; */
+    position: relative;
+    bottom: 15px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2px 5px 2px 5px;
+    width: 800px;
+    color: azure;
+}
+.b{
+    position: sticky;
+    top: 0px;
+    border: 3px solid rgb(250, 199, 123) ;
+    border-radius: 30px;
+    margin: 10px 100px 10px 100px;
+    background-color: black;
+}
+.navbar{
+    overflow: auto;
+}
+.navbar li{
+    float: left;
+    list-style: none;
+    margin: 10px 40px;
+}
+.navbar li a{
+    text-decoration: none;
+    color: rgb(250, 199, 123);
+}
+.searchbar{
+    float: right;
+    margin: 6px;
+    margin-right: 80px;
+    border-radius: 30px;
+}
+.navbar input{
+    margin: 2px;
+    text-align: center;
+    border: 2px solid rgb(250, 199, 123);
+    border-radius: 30px;
+}
+.c{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid rgb(250, 199, 123) ;
+    background-color: #fff;
+    color: black;
+}
+.c1 h3{
+    border: 3px solid rgb(250, 199, 123);
+    background-color: black;
+    color: rgb(250, 199, 123);
+    font-weight: bolder;
+    width: 300px;
+    margin-left: 20px;
+    padding: 5px 20px 2px 20px;
+}
+.c1 p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 2px 30px;
+}
+.c2{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 5px 5px 0px;
+}
+.c2a{
+    border: 2px solid black;
+    background-color:  rgb(250, 199, 123);
+    margin-bottom: 5px;
+}
+.c2a h2{
+    margin-left: 30px;
+}
+.c2a p{
+    font-size: medium;
+    padding: 0px 0px 0px 10px;
+}
+.c2b{
+    border: 2px solid black;
+    background-color:  rgb(250, 199, 123);
+}
+.c2b h2{
+    margin-left: 30px;
+}
+.c2b p{
+    font-size: medium;
+    padding: 0px 0px 0px 10px;
+}
