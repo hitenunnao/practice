@@ -61,6 +61,20 @@
     document.getElementsByClassName("c2")[0].innerHTML = var1
     function f1(){
         let var2 = document.getElementById("one").value 
-        console.log(var2)
+        let var3 = l.filter(f => f.title.includes(var2) )
+        let var4 = ""
+        var3.forEach(items => {var4 +=` <div class="c2a">
+                 <h2>${items.title}</h2>
+                 <p>
+                 ${items.description}
+                </p>
+            </div>`})
+            console.log(var4)
+        if(var4 == []){
+            document.getElementsByClassName("c2")[0].innerText = "no result found"
+        }
+        else{
+        document.getElementsByClassName("c2")[0].innerHTML = var4
+        }
     }
 </script>

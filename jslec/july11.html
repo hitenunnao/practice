@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one"></div>
+    <button id="two" onclick="func2()">CLICK ME</button>
+    <div id="three"></div> <br><br>
+    <input id="four" placeholder="key">
+    <input id="five" placeholder="value">
+    <button  onclick="func3()">add object</button>
+    <label id="six"></label>
+    <input id="seven" placeholder="key">
+    <input id="eight" placeholder="value">
+    <button  onclick="func4()">add object</button>
+    <label id="nine"></label>
+
+
+</body>
+</html>
+<script>
+    let l = [{digit:23},{digit:45},{digit:78},{digit:10}]
+    console.log(l)
+
+    function func1(){
+        let newl = l.map(i => `<h4>${i.digit}<h4>`)
+        console.log(newl)
+        let newl1 = newl.join("")
+        document.getElementById("one").innerHTML = newl1
+    }func1()
+
+    function func2(){
+        let newl = l.map( (i1,i2) => {return `<h4>${i1.digit += 1}<h4>`})
+        console.log(newl)
+        let newl1 = newl.join("")
+        document.getElementById("one").innerHTML = newl1
+    } 
+
+
+    function func3(){
+        let x1 = document.getElementById("four").value;
+        let x2 = document.getElementById("five").value;
+        let x = {}
+        x[x1] = x2
+        document.getElementById("six").innerText = x[x1]
+    }
+
+
+    function func4(){
+        let x1 = document.getElementById("seven").value;
+        let x2 = document.getElementById("eight").value;
+        let x = {}
+        let temp = x2
+        x[x1] = temp
+        document.getElementById("nine").innerText = x[x1]
+    }
+    
+</script>

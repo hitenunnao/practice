@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><input type="text" id="one" oninput="f1()"></div>
+    <div id="two"></div>
+</body>
+</html>
+<script>
+    let l1 = [23,34,67,86,87]
+    let newl1 = l1.filter((item) => {return item % 2 == 0} )
+    console.log(newl1)
+
+    let l2 = ["harry","larrry","cary","hudson","christopher"]
+    let newl2 = l2.filter((item) => {return item.length > 5} )
+    console.log(newl2)
+
+    let l3 = ["harry","","cary","hudson",""]
+    let newl3 = l3.filter((item) => {return item != ""} )
+    console.log(newl3)
+
+    let l4 = [23,34,67,86,87]
+    let l5 = [12,45,67,87]
+    let newl4 = l4.filter((item) => !l5.includes(item))
+    console.log(newl1)
+    console.log(l4)
+
+    const emp = [{name:"hiten",age:69},{name:"ayush",age:12}]
+    let data = emp.filter((item) => (item.age >50 ))
+    console.log(data)
+    function f1(){
+    let x = document.getElementById("one").value;
+    document.getElementById("two").innerHTML = x}
+
+   
+
+    function func1(str){
+    let arr = str.split(" "); 
+    console.log(arr.length)
+    let i = 1
+    let x = arr[0]
+        while ( i < arr.length){
+            if( arr[i].length > x.length ){
+                    x = arr[i]
+            }
+            i = i+1
+        }
+        console.log(x)
+} func1("my name is hiten")
+
+
+function func2(str){
+    let arr = str.split(" ")
+    let arr2 = arr.sort((item1,item2) => item2.length - item1.length )
+    console.log(arr2[0])
+}func2("your name is madhargaand")
+
+
+let imagine = [0,-2,9,-7]
+let ok = imagine.sort().reverse()
+console.log(ok)
+</script>
+
