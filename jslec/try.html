@@ -6,10 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input id="one"><button onclick="func1()">click</button><br><div id="three"></div>
+    <div id="two"></div>
 </body>
 </html>
 <script> 
+let arr = []
+    function func1(){
+        let x = document.getElementById("one").value;
+        arr.push(x)
+        func3()
+    }
+    function func2(b){
+         arr = arr.filter((item,index)=> index != b)
+        func3()
+        }
+    function func3(){
+         let x1 = arr.map((item,index) => `<li><h3>${item}</h3></li>
+        <button onclick="func2(${index})">delete</button>
+        <button onclick="func4(${index})">edit</button>`)
+        let x2 = x1.join()
+        document.getElementById("two").innerHTML = x2
+    }
+
+    function func4(b){
+        document.getElementById("one").value = `${arr[b]}`
+        document.getElementById("three").innerHTML = `<button onclick="func5(${b})" id="id1">Update</button>`
+    }
+    function func5(item){
+        document.getElementById("id1").remove()
+        let x = document.getElementById("one").value
+        arr[item] = x
+        func3()
+    }
 
 
 

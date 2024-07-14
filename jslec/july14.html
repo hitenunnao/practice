@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let a = null ?? "hiten"
+    let b = undefined
+    console.log( b  ?? "ayush")     // null operator
+
+    let x = 14
+    let y = x > 15 ? "yes" : "no"
+    console.log(y)
+
+const object = {name:"hiten"}
+const object2 = {...object}         // spread operator
+console.log(object)
+console.log(object2)
+object2.name = "ayush"
+console.log(object2)
+console.log(object)
+
+let l = [1,2,3]
+console.log(l)
+let l2 = [...l]
+console.log(l2)
+l2[0] = 69
+console.log(l2)
+
+func("hiten")
+function func(...a){
+    let b = a.join("")
+    console.log(b)
+}
+</script>

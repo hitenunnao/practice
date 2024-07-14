@@ -38,24 +38,24 @@
         let newl1 = newl.join("")
         document.getElementById("one").innerHTML = newl1
     } 
-
+        let x ={}
+        let temp
 
     function func3(){
         let x1 = document.getElementById("four").value;
         let x2 = document.getElementById("five").value;
-        let x = {}
+        temp = parseInt(x2)
         x[x1] = x2
-        document.getElementById("six").innerText = x[x1]
+        let w = document.getElementById("six").innerText = x[x1]
     }
 
 
     function func4(){
-        let x1 = document.getElementById("seven").value;
-        let x2 = document.getElementById("eight").value;
-        let x = {}
-        let temp = x2
-        x[x1] = temp
-        document.getElementById("nine").innerText = x[x1]
+        let y1 = document.getElementById("seven").value;
+        let y2 = document.getElementById("eight").value;
+        x[y1] = parseInt(y2) + temp
+        document.getElementById("nine").innerText = x[y1] 
+        console.log(x)
     }
     
 </script>

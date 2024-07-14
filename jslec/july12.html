@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one"></div>
+    <div id="two"></div><br><br>
+    <h2>to do list</h2>
+    <div>
+    <input id="three"> <button onclick="func1()" >click</button>
+    <div id="four"></div>
+    </div>
+</body>
+</html>
+<script>
+    //Object methods in javascript
+
+    const person = {
+        fname : "hiten",
+        lname : "gupta",
+        id : 101,
+        fullname : function() {
+            return this.fname + " " + this.lname
+        }
+    }
+    console.log(person.fullname())     // accessing javascript object method
+
+    //adding a method to an object
+
+    person.showall = function(){
+        return  "id=" + " "+ this.id + " "+ this.fullname()
+    }
+    console.log(person.showall())
+
+    // displaying objects
+
+     // 1st=> displaying object properties
+     //for example
+    document.getElementById("one").innerHTML = person.showall()
+
+    //2nd => displaying properties in a loop
+    //for example
+    const emp ={                        // create a object
+        name : "hiten",
+        city : "unnao",
+        age : 69
+    }
+    let text = ""                       // build a text
+    for (let x in emp) {
+        text += emp[x] + " "
+    }
+    console.log(text)
+    document.getElementById("two").innerHTML = text        // displaying object
+
+    // 3rd => using json.stringify
+    let newemp = JSON.stringify(emp)
+    console.log(newemp)
+    document.getElementById("one").innerHTML = newemp
+
+    let l = [2,4,6,8,9]
+    let l1 = l.map((item,index,array) => {return array} )
+    console.log(l1)
+
+
+
+    // too do list
+    let arr = []
+    function func1(){
+        let x = document.getElementById("three").value;
+        arr.push(x)
+        console.log(arr)
+        let x1 = arr.map((item,index) => `<h3>${item}</h3>
+        <button onclick="func2(${index})">delete</button>`)
+        let x2 = x1.join()
+        document.getElementById("four").innerHTML = x2
+    }
+
+        function func2(b){
+         arr = arr.filter((item,index)=> index != b)
+         let x1 = arr.map((item,index) => `<h3>${item}</h3>
+        <button onclick="func2(${index})">delete</button>`)
+        let x2 = x1.join()
+        document.getElementById("four").innerHTML = x2
+        }
+
+    
+
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local-storage</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const emp = {name:"hiten",salary:6000,age:69}
+    let arr = [1,2,3,4,5,6]
+    localStorage.setItem("userid",JSON.stringify(emp))
+
+    let var1 = JSON.parse(localStorage.getItem("userid"))
+    console.log(var1)
+    var1.name = "harami"
+    localStorage.setItem("userid",JSON.stringify(var1))
+    console.log(var1)
+
+    // console.log(JSON.parse(var1))
+
+
+</script>
