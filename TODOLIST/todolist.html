@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO-LIST</title>
+    <style>
+        body{
+            background-color: lavender;
+        }
+        .one{
+            height: 100px;
+            width: 800px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border: 3px solid black;
+            border-radius: 30px;
+            margin: 10px 300px 10px 300px;
+            background-color: dimgray;
+        }
+        .one input{
+          height: 30px ;
+          width: 300px;
+          border: 2px solid black;
+          margin: 35px 25px 25px 25px;
+          border-radius: 30px;
+        }
+        .one button{
+            height: 30px;
+            width: 30px;
+            margin: 35px 50px 25px 0px;
+            padding: 2px 2px;
+            border: 2px solid #fff;
+            color: #fff;
+            background-color: black;
+            border-radius: 200px;
+        }
+        #four{
+            height: 25px;
+            width: 70px;
+            margin: 35px 50px 25px 0px;
+        }
+        .buttons button{
+            color: #fff;
+            background-color: black;
+            margin: 5px 0px 5px 20px;
+            padding: 5px 5px;
+            border: 2px solid #fff;
+        }
+        #li1{
+            margin: 5px 5px ;
+            padding: 10px 10px;
+            background-color: dimgray;
+            border: 3px solid black;
+            border-radius: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">TO DO LIST</h1>
+    <div class="container">
+        <div class="one"><input type="text" id="one" placeholder="enter your text here"> <button onclick="func1()">+</button> <div id="three"></div></div>
+        <ol type="A" id="two" ></ol>
+    </div>
+</body>
+</html>
+<script>
+
+    let l = []
+
+    function func1(){
+        let x = document.getElementById("one").value;
+        l.push(x)
+        func2()
+    }
+
+    function func2(){
+        let l1 = l.map((item,index) => `<li id="li1"><h4>${item}</h4>
+        <div class="buttons">
+        <button onclick="func3(${index})">Delete</button>
+        <button onclick="func4(${index})">Edit</button>
+        </div></li>`)
+        let l2 = l1.join("")
+        document.getElementById("two").innerHTML = l2
+    }
+
+    function func3(x){
+        l = l.filter((item,index) => index != x)
+        func2()
+    }
+
+    function func4(index){
+        document.getElementById("one").value = `${l[index]}`
+        document.getElementById("three").innerHTML = `<button onclick ="func5(${index})" id="four">Update</button>`
+    }
+
+    function func5(index){
+        document.getElementById("four").remove()
+        let x = document.getElementById("one").value
+        l[index] = x
+        func2()
+    }
+
+</script>
