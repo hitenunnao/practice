@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>*{
+        box-sizing: border-box;
+    }
+        .container{
+            margin: 20px 15px;
+            display: flex;
+            gap: 40px;
+        }
+        .card{
+            height: 400px;
+            width: 400px;
+            position: relative;
+            transition: transform 2000ms;
+            transform-style: preserve-3d;
+        }
+        .front , .back{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+        .front{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: burlywood;
+            
+        }
+        .back{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            transform: rotateX(180deg);
+        }
+        .flip{
+            cursor: pointer;
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let l = [1,2,3]
+    let l1= l.map(item => `<div class="card">
+            <div class="front"><h1>${item}</h1></div>
+            <div class="back"><h2>this is back</h2><p>you are looking at card's back</p></div>
+        </div>`)
+    l1 = l1.join(" ")
+    document.getElementsByClassName("container")[0].innerHTML = l1
+    setTimeout(() => {
+        [0,1,2].forEach(item => {document.getElementsByClassName("card")[item].classList.add("flip")
+        })   
+    }, 5000);
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+,<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.js"></script>
+<script>
+    (async() => {
+        try {
+            const data =  await axios.post('https://jsonplaceholder.typicode.com/posts',{
+    title: 'hiten',
+    body: 'gaand',
+    userId: 23,
+  } ,{headers: {
+    'content-type': 'application/json; charset=UTF-8;'
+  }}
+)
+            console.log(data)
+            
+        } catch (error) {
+            
+            console.log(error)
+        }
+    })()
+    let l = ["hiten", "hiten", "hiten","gupta"]
+    console.log(new Set(l))
+    let s = "hakuna matata"
+    let m = s.replace("matata","lora")
+    console.log(m)
+</script>

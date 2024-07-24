@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+
+            box-sizing: border-box;
+        }
+        body{
+            /* height: 100vh; */
+            /* overflow: hidden; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: yellowgreen;
+            /* flex-wrap: wrap; */
+        }
+        .container{
+            display: flex; 
+            gap: 40px;
+            /* perspective:200px; */
+            margin-top: 20px;
+            /* justify-content: space-evenly; */
+        }
+        .card{
+            height: 200px;
+            width: 200px;
+            position: relative;
+            transition: transform 1500ms;
+            transform-style: preserve-3d;
+        }
+        /* .card :hover{
+            cursor: none;
+            transform: rotateY(180deg);
+        }
+        .container :hover{
+            cursor: none;
+            transform: rotateY(180deg);
+        } */
+
+        .nsfw {
+            cursor: pointer;
+            transform: rotateY(180deg);
+        }
+        .front, .back{
+            height: 100%;
+            width: 100%;   
+            border-radius: 30px;
+            box-shadow: 0 0 5px 2px rgb(50, 50, 50, 0.25);
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .front{
+            background-color: white;
+            background-size: 100% 100%;
+        }
+        .back{
+            color: white;
+            background-color: #3a3a3a;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .secondary{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 50px;
+            background-color: silver;
+            border: 3px solid black;
+            border-radius: 3rem;
+        }
+        .three{
+            height:200px;
+            width: 200px;
+            position: absolute;
+        }
+        .score{
+            height: 100px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 30px;
+            background-color: blanchedalmond;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div><br><br><br>
+    <div class="secondary" id="one"></div>
+    <div id="two"></div>
+    <div class="score"></div>
+      
+</body>
+</html>
+<script>
+    var audio = new Audio('buzzer-or-wrong-answer-20582.mp3');
+const template = [2,5,1,3,4].map((el,index) => `<div class="card">
+            <div class="front">
+                <h1> ${el}</h1>
+                <img src="" class="three" ></div>
+            <div class="back" onclick="func1(${el},${index})">
+                <h4>this is card back</h4>
+                <p>you are looking at cards back</p>
+            </div>
+        </div>`).join(" ")
+document.getElementsByClassName("container")[0].innerHTML = template
+// setTimeout(() => {
+//         [0,1,2,3,4].forEach(item => {document.getElementsByClassName("card")[item].classList.add("nsfw")
+//         })   
+//     }, 5000);
+
+function reverseCard(){
+    
+}
+
+function call(){
+    [0,1,2,3,4].forEach(item => {document.getElementsByClassName("card")[item].classList.add("nsfw")
+      }) 
+}
+let var2
+let y = 6
+let var1 = setInterval(() => {
+    y-=1
+    if (y == 0) {
+        clearInterval(var1)
+        call()
+        document.getElementById("one").remove()
+         var2 = random(1,6)
+        document.getElementById("two").innerHTML = `<h1>Select the box conataining <marked><strong>${var2} </marked></strong>number</h1>`
+    }else{
+    document.getElementsByClassName("secondary")[0].innerHTML = y  } 
+}, 1000);
+const random = (min, max) => {
+    let num = Math.random() * (max - min) + min;
+    return Math.floor(num);
+};
+function func1(arg,index){
+    let score = 0
+    if (arg == var2){
+        document.getElementsByClassName("card")[index].classList.remove("nsfw")
+        document.getElementsByClassName("score")[0].innerHTML = `<h1>${score}</h1>`
+        score += 10
+        setTimeout(() => {
+           
+        }, 2000);
+        
+    }
+    else{
+        setTimeout(() => {
+            score -= 5
+            document.getElementsByClassName("three")[index].src = "red-cross-transparent-png-red-cross-image-transparent-background-11563094367qdhczeqtto-removebg-preview.png"
+            audio.play();
+            
+            document.getElementsByClassName("card")[index].classList.remove("nsfw")  
+
+        }, 1000);
+        setTimeout(() => {
+            call()
+        }, 2000);
+    }
+}
+</script>

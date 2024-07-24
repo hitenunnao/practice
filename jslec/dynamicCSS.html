@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+        width: 400px;
+        height: 400px;
+        background-color: aqua;
+        margin: 20px 20px;
+        transition-duration: 1s;
+    }
+    .blue{
+        background-color: blue;
+    }
+    </style>
+</head>
+<body>
+    <!-- <button onclick="f1()">hit me</button> -->
+    <div class="box" onclick="f1()"></div>
+</body>
+</html>
+<script>
+    function f1(){
+    // setInterval(() => {
+    //     document.getElementsByClassName("box")[0].classList.toggle("blue")
+    // }, 3000);
+    document.getElementsByClassName("box")[0].style.backgroundColor = "blue"
+    }
+</script>

@@ -59,7 +59,7 @@
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">TO DO LIST</h1>
+    <h1 style="text-align: center;">TO DO LIST</h1><input type="date">
     <div class="container">
         <div class="one"><input type="text" id="one" placeholder="enter your text here"> <button onclick="func1()">+</button> <div id="three"></div></div>
         <ol type="A" id="two" ></ol>
@@ -67,20 +67,25 @@
 </body>
 </html>
 <script>
-
-    let l = []
-
+   
+    
+    let l = localStorage.getItem("note") ?? "[]"
+    l = JSON.parse(l)
+    func2()
     function func1(){
+        console.log(l)
         let x = document.getElementById("one").value;
-        l.push(x)
+        l.push({text:x,time:Date.now()})
+        localStorage.setItem("note",JSON.stringify(l))
         func2()
     }
 
     function func2(){
-        let l1 = l.map((item,index) => `<li id="li1"><h4>${item}</h4>
+        let l1 = l.map((item,index) => `<li id="li1"><h4>${item.text}</h4>
         <div class="buttons">
         <button onclick="func3(${index})">Delete</button>
         <button onclick="func4(${index})">Edit</button>
+        <div>${new Date(item.time).toLocaleDateString("en-IN")}</div>
         </div></li>`)
         let l2 = l1.join("")
         document.getElementById("two").innerHTML = l2
@@ -88,18 +93,22 @@
 
     function func3(x){
         l = l.filter((item,index) => index != x)
+        localStorage.setItem("note",JSON.stringify(l))
         func2()
     }
 
-    function func4(index){
-        document.getElementById("one").value = `${l[index]}`
-        document.getElementById("three").innerHTML = `<button onclick ="func5(${index})" id="four">Update</button>`
+    function func4(a){
+        let l3 = l[a]
+        document.getElementById("one").value = l3.text
+        // localStorage.setItem("note",JSON.stringify(l3))
+        document.getElementById("three").innerHTML = `<button onclick ="func5(${a})" id="four">Update</button>`
     }
 
     function func5(index){
         document.getElementById("four").remove()
         let x = document.getElementById("one").value
-        l[index] = x
+        l[index].text = x
+        localStorage.setItem("note",JSON.stringify(l))
         func2()
     }
 
