@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+        body{
+            height: 100vh;
+            overflow: hidden;
+            background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+        }
+        .header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 2px solid black;
+            box-shadow: 0 0 5px 2px rgb(50, 50, 50, 0.25);
+            border-radius: 12px;
+            background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+        }
+        .heading{
+            font-size: 30px;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+        .score{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 150px;
+            box-shadow: 0 0 10px 4px rgb(50, 50, 50, 0.25);
+            border: 0.1px solid black;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            padding: auto auto;
+        }
+        .level{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 150px;
+            box-shadow: 0 0 10px 4px rgb(50, 50, 50, 0.25);
+            border: 0.1px solid black;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            padding: auto auto;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            height: 300px;
+            /* width: 100vw; */
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 20px 5px;
+        }
+        .card{
+            height: 200px;
+            width: 200px;
+            position: relative;
+            transition: transform 1500ms;
+            transform-style: preserve-3d;
+        }
+        .front , .back {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
+            border-radius: 30px;
+            box-shadow: 0 0 5px 2px rgb(50, 50, 50, 0.25);
+            position: absolute;
+            backface-visibility: hidden;
+        }
+        .front{
+            background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
+            color: white;
+            font-size: 25px;
+        }
+        .back{
+            /* background-color: gray; */
+            background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+            color: black;
+            transform: rotateY(180deg);
+        }
+        .flipcard{
+            cursor: pointer;
+            transform: rotateY(180deg);
+        }
+        .countdown{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 50px;
+            background-color: black;
+            color: white;
+            border: 3px solid white;
+            border-radius: 3rem;
+        }
+        .styled{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            height: 50px;
+            width: 700px;
+            border: 2px soild black;
+            border-radius: 15px;
+            background-color: black;
+            color: white;
+        }
+        .styled1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            height: 50px;
+            width: 400px;
+            border: 2px soild black;
+            border-radius: 15px;
+            background-color: black;
+            color: white;
+        }
+        .correct{
+
+
+        }
+        .playagain{
+            margin: 10px auto;
+            height: 20px;
+            width: 100px;
+            padding-top: 30px;
+           
+        }
+        .playagain button{
+            
+            padding: 10px 10px;
+            background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+            color: black;
+            border: 2px solid black;
+            border-radius: 15px;
+        }
+        .playagain :hover {
+            cursor: pointer;
+            background-image: linear-gradient(to right, black 0%, black 100%);
+            color: white;
+            border: 2px solid white;
+        }
+        .none{
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="header"><div class="heading"></div><div class="score"><label>Score : 0</label></div><div class="level"><label>Level : 1</label></label></div></div>
+    <div class="container"></div>
+    <div class="countdown" id="one"></div>
+    <div class="selector"></div>
+    <div class="playagain"></div>
+</body>
+</html>
+<script>
+    document.getElementsByClassName("heading")[0].innerHTML = "<h1>Memory Game</h1>";
+    // random function to generate random numbers
+
+    let random =  (min, max) => {
+    let num = Math.random() * (max - min) + min;
+    return Math.floor(num);
+    }
+
+    let array = []
+    let y = 1
+    function createCardNumber(){
+        array = []
+        y += 1
+        let i = 1
+        while( i <= y){
+            array.push(i)
+            i += 1
+        }
+    }
+
+
+    // array holds the number of cards
+    
+    function shufflearray(array){
+        return array.sort(() => Math.random() - 0.5)
+    }
+
+    // this shuffle()returns always a shuffled array
+
+    shuffle()
+    function shuffle(){
+    createCardNumber()
+    let  newarray = shufflearray(array)
+    // code to generate cards
+    let cardNumbers = newarray.map((item , index) => ` <div class="card">
+            <div class="front"><h1>${item}</h1></div>
+            <div class="back" onclick="showcard(${item},${index})"> <h2>Card Back</h2> <p>Guess the Card</p> </div>
+        </div>`).join(" ")
+        document.getElementsByClassName("container")[0].innerHTML = cardNumbers
+        countdownAndCardSelector()
+    }
+
+    // this block of code responsible for the countdown and display timer and generate a random number of box to be selected
+
+    let cardnumber
+    function  countdownAndCardSelector(){
+    let count = 5
+    let interval = setInterval(() => {
+        count -= 1
+        if(count == 0){
+            clearInterval(interval)
+            flipcard()
+            document.getElementsByClassName("countdown")[0].classList.add("none")
+            cardnumber = random(1,y)
+            document.getElementsByClassName("selector")[0].classList.add("styled")
+            document.getElementsByClassName("selector")[0].innerHTML = `<h3> Select the BOX with ${cardnumber} written on it </h3>`
+            
+        }
+        else{
+            console.log(count)
+            document.getElementsByClassName("countdown")[0].innerHTML = count
+            document.getElementsByClassName("countdown")[0].classList.remove("none")
+        }
+    }, 1000);
+    }
+    function flipcard(){
+        for (let i = 0 ; i < y ; i++){
+            document.getElementsByClassName("card")[i].classList.add("flipcard")
+        }
+    }
+    function removeflipcard(){
+        for (let i = 0 ; i < y ; i++){
+            document.getElementsByClassName("card")[i].classList.add("flipcard")
+        }
+    }
+
+
+    
+    // this block of code having the function which is used to flip the card onclicking it
+    let score = 0
+    let level = 0
+    function showcard(item,index) {
+        console.log("working")
+       
+       if ( item == cardnumber) {
+        level += 1
+        score += 10
+        document.getElementsByClassName("card")[index].classList.remove("flipcard")
+        document.getElementsByClassName("card")[index].src = "C:\Users\rishi\Downloads\check-mark-icon-checkmark-right-symbol-tick-sign-ok-button-correct-circle-icon-free-vector.jpg"
+        document.getElementsByClassName("selector")[0].classList.add("styled1")
+        document.getElementsByClassName("selector")[0].innerHTML = `You select the correct card`
+        document.getElementsByClassName("score")[0].innerHTML = "Score : " + score
+        document.getElementsByClassName("level")[0].innerHTML = "Level : " + level
+        setTimeout(() => {
+            removeflipcard()
+        }, 1000);
+       document.getElementsByClassName("playagain")[0].classList.remove("none")
+       document.getElementsByClassName("playagain")[0].innerHTML = `<button onclick="next()">Next</button>`
+    }
+    else{
+    setTimeout(() => {
+            removeflipcard()
+     }, 1500);
+        document.getElementsByClassName("card")[index].classList.remove("flipcard")
+        document.getElementsByClassName("selector")[0].classList.add("styled1")
+        document.getElementsByClassName("selector")[0].innerHTML = `You select the wrong card 😒`
+        document.getElementsByClassName("score")[0].innerHTML = "Score : " + score
+        document.getElementsByClassName("level")[0].innerHTML = "Level : " + level
+        document.getElementsByClassName("playagain")[0].classList.remove("none")
+        document.getElementsByClassName("playagain")[0].innerHTML = `<button onclick="restart()">Play Again</button>`
+       }
+    }
+   
+    // this block of code is responsible for the game to be restrarted after onclick on playagain
+
+   function restart(){
+        shuffle()
+        removeflipcard()
+        document.getElementsByClassName("selector")[0].classList.add("none")
+        document.getElementsByClassName("playagain")[0].classList.add("none")
+        setTimeout(() => {
+            document.getElementsByClassName("selector")[0].classList.remove("none")
+        }, 5000);
+    }
+   
+    function next(){
+        shuffle()
+        document.getElementsByClassName("selector")[0].classList.add("none")
+        document.getElementsByClassName("playagain")[0].classList.add("none")
+        setTimeout(() => {
+            document.getElementsByClassName("selector")[0].classList.remove("none")
+        }, 5000);
+    }      
+</script>
